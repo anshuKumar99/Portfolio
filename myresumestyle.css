@@ -6,7 +6,8 @@ body {
     /* scroll-behavior: smooth; */
 }
 section:nth-child(2n){
-    background-color:rgb(240, 240, 240);;
+    background-color:rgb(240, 240, 240);
+    height: auto;
 }
 #backToTop{
     position: fixed;
@@ -320,9 +321,13 @@ section:nth-child(2n){
     #profile-image{
         margin-top: -9vh;
     }
+    #backToTop{
+        left: 90%;
+    }
     .timeline-content{
         left:15% !important;
         width:80%;
+        height: 22rem;
     }
     .timeline-divider{
         left:5%;
@@ -418,6 +423,7 @@ section:nth-child(2n){
     .timeline-content{
         left:15% !important;
         width:80%;
+        height: 28rem;
     }
     .timeline-divider{
         left:5%;
