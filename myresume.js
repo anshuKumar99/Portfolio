@@ -1,114 +1,53 @@
+
+//Array of all Anchor tags used in nav menu
+var navMenuAnchorTags=document.querySelectorAll('.nav-menu a');
+
+
+//for loop is used for accessing all the elements of array navMenuAnchorTags
+for(var i=0;i<navMenuAnchorTags.length;i++){
+    navMenuAnchorTags[i].addEventListener('click',function(event){
+        //To prevent default behaviour of anchor tag
+        event.preventDefault();
+
+        //To access all the section ID(this.textContent), remove extra spaces if present(trim), and convert it to lowercase(toLowercase)
+        var targetSectionID=this.textContent.trim().toLowerCase();
+
+        //To get the target section using targetSectionID
+        var targetSection=document.getElementById(targetSectionID);
+
+        //To get the distance of target section from top
+        var targetSectionCoordinates=targetSection.getBoundingClientRect().top;
+
+        //This will run until we reach the target section
+        var interval=setInterval(function(){
+            //To get the distance of target section from top
+            var targetSectionCoordinates=targetSection.getBoundingClientRect();
+            if(targetSectionID=="contact" && targetSectionCoordinates.top<=70){
+                clearInterval(interval);
+                return;
+            }
+            if(targetSectionCoordinates.top<=0){
+                clearInterval(interval);
+                return;
+            }
+            //Until we reach target section window will scroll by 50px after every 20 miliseconnds
+            window.scrollBy(0,50);
+
+        },15)
+    })
+}
+
+//Back to Top feature
 let homeSection=document.getElementById('body-header');
-let aboutSection=document.getElementById('about');
-let skillSection=document.getElementById('skills');
-let experienceSection=document.getElementById('experience');
-let educationSection=document.getElementById('education');
-let portfolioSection=document.getElementById('portfolio');
-let contactSection=document.getElementById('contact');
-
-
-let navMenuAbout=document.getElementById('nav-menu-about');
-let navMenuSkills=document.getElementById('nav-menu-skills');
-let navMenuExperience=document.getElementById('nav-menu-experience');
-let navMenuEducation=document.getElementById('nav-menu-education');
-let navMenuPortfolio=document.getElementById('nav-menu-portfolio');
-let navMenuContact=document.getElementById('nav-menu-contact');
-
-let currentPos=0;
-let interval;
-
-navMenuAbout.addEventListener("click",function(event){
-    event.preventDefault();
-    interval=setInterval(function() {
-        let targetPosAboutSection=aboutSection.getBoundingClientRect().top;
-        if(targetPosAboutSection<=0){
-        currentPos=0;
-        clearInterval(interval);
-        return;
-    }
-    window.scrollBy(0,50);
-    currentPos+=50;
-},10);
-});
-
-navMenuSkills.addEventListener("click",function(event){
-    event.preventDefault();
-    interval=setInterval(function() {
-        let targetPosSkillSection=skillSection.getBoundingClientRect().top;
-        if(targetPosSkillSection<=0){
-            currentPos=0;
-            clearInterval(interval);
-            return;
-        }
-        window.scrollBy(0,50);
-        currentPos+=50;
-    },10);
-});
-
-navMenuExperience.addEventListener("click",function(event){
-    event.preventDefault();
-    interval=setInterval(function() {
-        let targetPosExperienceSection=experienceSection.getBoundingClientRect().top;
-        if(targetPosExperienceSection<=0){
-            currentPos=0;
-             clearInterval(interval);
-             return;
-        }
-        window.scrollBy(0,50);
-        currentPos+=50;
-    },10);
-});
-
-navMenuEducation.addEventListener("click",function(event){
-    event.preventDefault();
-    interval=setInterval(function() {
-        let targetPosEducationSection=educationSection.getBoundingClientRect().top;
-    if(targetPosEducationSection<=0){
-        clearInterval(interval);
-        return;
-    }
-    window.scrollBy(0,50);
-    currentPos+=50;
-},10);
-});
-
-navMenuPortfolio.addEventListener("click",function(event){
-    event.preventDefault();
-    interval=setInterval(function() {
-        let targetPosPortfolioSection=portfolioSection.getBoundingClientRect().y;
-    if(targetPosPortfolioSection<=0){
-        currentPos=0;
-        clearInterval(interval);
-        return;
-    }
-    window.scrollBy(0,50);
-    currentPos+=50;
-},10);
-});
-
-navMenuContact.addEventListener("click",function(event){
-    event.preventDefault();
-    interval=setInterval(function() {
-        let targetPosContactSection=contactSection.getBoundingClientRect().top;
-    if(targetPosContactSection<=70){
-        currentPos=0;
-        clearInterval(interval);
-        return;
-    }
-    window.scrollBy(0,50);
-    currentPos+=50;
-},10);
-});
-
 let backToTopBtn =document. getElementById('backToTop');
 backToTopBtn.addEventListener("click",function(event){
     event.preventDefault();
-    interval=setInterval(function(){
+    var intervalToTop=setInterval(function(){
         let targetPosition=homeSection.getBoundingClientRect().top;
         if(targetPosition==0){
-            clearInterval(interval);
+            clearInterval(intervalToTop);
             return;
         }
         window.scrollBy(0,-50);
-    },10);
+    },15);
 })
