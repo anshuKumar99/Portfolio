@@ -308,6 +308,135 @@ section:nth-child(2n){
     border-radius: 50%;
     z-index: 1;
 }
+
+
+/* Portfolio */
+#portfolio{
+    padding: 3rem;
+  }
+  #protfolio-heading{
+    color: #1262b3;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+  }
+  #portfolio-container{
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 50px;
+    margin-bottom: 20px;
+    justify-content: space-around;
+  }
+  .portfolio-image{
+    max-width: 300px;
+    overflow: hidden;
+    margin: 30px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  .portfolio-image img{
+    width: 100%;
+    height: 100%;
+  }
+  .project-details{
+    transition: all 0.5s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    color: transparent;
+    text-align: center;
+    padding: 10px;
+  }
+  .portfolio-image:hover {
+    box-shadow: 0 0 20px #74ADC8;
+  }
+  .portfolio-image:hover .project-details{
+    background-color: #80808078;
+    color: white;
+  }  
+
+/* Contact */
+#contact{
+    height: auto;
+    width: 100%;
+    margin-top: -3rem;
+    background-image: linear-gradient(30deg,#2857a4,#403066 70%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#contact-heading{
+    color:white;
+    font-size: 2rem;
+    margin-bottom: 4rem;
+    padding: 2rem;
+}
+#contact-container{
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-self: start;
+}
+#contact-form{
+    margin: 0rem 1rem 1rem 10rem; 
+    width: 45%;
+}
+input,textarea{
+    display: block;
+    box-sizing: border-box;
+    color: white;
+    padding: 0.8rem;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    width:90%;
+    margin:auto ;
+    margin-top: 1rem;
+    background-color:rgba(0, 0, 0, 0);
+    border-bottom: 2px solid white;
+
+}
+button[type="submit"]{
+    display: block;
+    font-size: 1rem;
+    padding: 0.5rem;
+    color: white;
+    border: 2px solid white;
+    background-color: #0000;
+    margin: auto;
+    margin-top: 2rem; 
+} 
+button[type="submit"]:hover{
+    color: #1262b3;
+    background-color: white;
+}
+#contact-social-list li{
+    padding: 15px;
+    margin-bottom: 3rem;
+}
+#get-in-touch{
+    display: inline-block;
+    width: 40%;
+    font-size: 1.2rem;
+    color: white;
+
+}
+#address{
+    margin:0px ;
+    padding: 0px;
+    line-height:3rem ;
+}
+#address li{
+    list-style: none;
+}
+
+/* Media Queries */
 @media screen and (max-width:768px) {
     html{
         font-size: 15px;
@@ -523,134 +652,4 @@ section:nth-child(2n){
         list-style: none;
     }
     
-}
-
-/* Portfolio */
-#portfolio{
-    padding: 3rem;
-}
-#protfolio-heading{
-    color: #1262b3;
-    font-size: 2rem;
-    margin-bottom: 3rem;
-    padding: 2rem;
-}
-#portfolio-container{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.portfolio-image{
-    width: 25rem;
-    height: 20rem;
-    min-width: 150px;
-    margin: 1rem;
-    position: relative;
-}
-.portfolio-image img{
-    height: 15rem;
-    width: 15rem;
-    margin: 2rem;
-    object-fit: contain;
-}
-.portfolio-image .project-details{
-    background-color: rgba(53, 53, 53, 0.315);
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: 0.5s ease;
-}
-.portfolio-image .portfolio-text {
-    padding: 1.5rem;
-    font-size: 1.5rem;
-    color: white;
-  }
-.portfolio-image:hover {
-    box-shadow: 0px 0px 12px 0px #6db5fd;
-  }
-.portfolio-image:hover .project-details{
-    visibility: visible;
-    opacity: 1;
-}
-
-/* Contact */
-#contact{
-    height: auto;
-    width: 100%;
-    margin-top: -3rem;
-    background-image: linear-gradient(30deg,#2857a4,#403066 70%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-#contact-heading{
-    color:white;
-    font-size: 2rem;
-    margin-bottom: 4rem;
-    padding: 2rem;
-}
-#contact-container{
-    display: flex;
-    width: 90%;
-    flex-direction: row;
-    justify-content: space-around;
-    align-self: start;
-}
-#contact-form{
-    margin: 0rem 1rem 1rem 10rem; 
-    width: 45%;
-}
-input,textarea{
-    display: block;
-    box-sizing: border-box;
-    color: white;
-    padding: 0.8rem;
-    border: none;
-    outline: none;
-    font-size: 1.2rem;
-    width:90%;
-    margin:auto ;
-    margin-top: 1rem;
-    background-color:rgba(0, 0, 0, 0);
-    border-bottom: 2px solid white;
-
-}
-button[type="submit"]{
-    display: block;
-    font-size: 1rem;
-    padding: 0.5rem;
-    color: white;
-    border: 2px solid white;
-    background-color: #0000;
-    margin: auto;
-    margin-top: 2rem; 
-} 
-button[type="submit"]:hover{
-    color: #1262b3;
-    background-color: white;
-}
-#contact-social-list li{
-    padding: 15px;
-    margin-bottom: 3rem;
-}
-#get-in-touch{
-    display: inline-block;
-    width: 40%;
-    font-size: 1.2rem;
-    color: white;
-
-}
-#address{
-    margin:0px ;
-    padding: 0px;
-    line-height:3rem ;
-}
-#address li{
-    list-style: none;
 }
