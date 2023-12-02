@@ -2,11 +2,12 @@
 //Array of all Anchor tags used in nav menu
 var navMenuAnchorTags=document.querySelectorAll('.nav-menu a');
 
+
 //creating interval variable in global scope so scrollVertically() will know which interval to clear
 var interval; 
 
-//for loop is used for accessing all the elements of array navMenuAnchorTags
-for(var i=0;i<navMenuAnchorTags.length;i++){
+//for loop is used for accessing all the elements of array navMenuAnchorTags and iteration is starting from 1 not 0 because first element (X) is used for closing hamburger nav menu on mobile only view
+for(var i=1;i<navMenuAnchorTags.length;i++){
     navMenuAnchorTags[i].addEventListener('click',function(event){
         //To prevent default behaviour of anchor tag
         event.preventDefault();
