@@ -209,13 +209,23 @@ section:nth-child(2n){
     background-color:#1262b3;
     height: inherit;
 }
-#skill-nodejs{
+#skill-reactjs{
     color: white;
     padding: 0.5rem;
     padding-left: 1.3rem;
 }
 #sixty-percent{
     width: 60%;
+    background-color: rgba(255, 0, 85, 0.16);
+    height: inherit;
+}
+#skill-sql{
+    color: white;
+    padding: 0.5rem;
+    padding-left: 1.3rem;
+}
+#ninty-percent{
+    width: 90%;
     background-color:  orangered;
     height: inherit;
 }
