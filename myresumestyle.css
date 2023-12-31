@@ -263,6 +263,12 @@ section:nth-child(2n){
     line-height:0;
     font-weight: 500;
 }
+.timeline-head img{
+    height: 2rem;
+    width:4rem;
+    position: absolute;
+    left: 0;
+}
 .timeline-body{
     text-align: justify;
     font-size: 0.90rem;
